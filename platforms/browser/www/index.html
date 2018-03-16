@@ -37,7 +37,8 @@ function onSuccess(mediaFiles) {
 }
 
 function onError(error) {
-  navigator.notification.alert('Error code: ' + error.code, null, 'Capture Error');
+//  navigator.notification.alert('Error code: ' + error.code, null, 'Capture Error');
+alert('Error code: ' + error.code, null, 'Capture Error');
 }
 }
 
