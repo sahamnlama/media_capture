@@ -16,14 +16,15 @@
 
 
         function onDeviceReady() {
-
+          /alert(navigator.device.capture);
+          alert(JSON.stringify(navigator.device.capture));
             document.getElementById("audioCapture").addEventListener("click", audioCapture);
-            alert(navigator.device.capture);
-            alert(JSON.stringify(navigator.device.capture));
+
         }
 
         function audioCapture() {
-
+          alert(navigator.device.capture);
+          alert(JSON.stringify(navigator.device.capture));
           alert('');
 var options = {
   limit: 1,
