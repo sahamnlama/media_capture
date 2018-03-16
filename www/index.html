@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Blank App</title>
+    </head>
+    <body onload="onLoad()">
+        <button id = "audioCapture">AUDIO</button>
+        <script type="text/javascript" src="cordova.js"></script>
+
+        <script type="text/javascript">
+        function onLoad() {
+            document.addEventListener("deviceready", onDeviceReady, false);
+        }
+
+
+        function onDeviceReady() {
+            document.getElementById("audioCapture").addEventListener("click", audioCapture);
+        }
+
+        function audioCapture() {
+
+          alert('');
+var options = {
+  limit: 1,
+  duration: 10
+};
+navigator.device.capture.captureAudio(onSuccess, onError, options);
+
+function onSuccess(mediaFiles) {
+  var i, path, len;
+  for (i = 0, len = mediaFiles.length; i < len; i += 1) {
+     path = mediaFiles[i].fullPath;
+     console.log(mediaFiles);
+  }
+}
+
+function onError(error) {
+  navigator.notification.alert('Error code: ' + error.code, null, 'Capture Error');
+}
+}
+
+
+
+
+        </script>
+    </body>
+</html>
